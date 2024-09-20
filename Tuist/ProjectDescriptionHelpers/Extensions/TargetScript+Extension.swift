@@ -6,6 +6,7 @@
 //
 
 import ProjectDescription
+import Foundation
 
 public extension TargetScript {
     enum UtilityTool {
@@ -14,14 +15,21 @@ public extension TargetScript {
         var scriptCommand: String {
             switch self {
             case .swiftLint:
-                return "${PROJECT_DIR}/../../Tools/swiftlint --config \"${PROJECT_DIR}/Tuist_TCA/Resources/swiftlint.yml\""
+                return """
+if [ -f "${PROJECT_DIR}/Tuist_TCA/Resources/swiftlint.yml" ]; then
+  "${PROJECT_DIR}/../../Tools/swiftlint" --config "${PROJECT_DIR}/Tuist_TCA/Resources/swiftlint.yml" "${PROJECT_DIR}"
+else
+  echo "warning: SwiftLint configuration file not found"
+fi
+"""
             }
         }
     }
     
     static func prebuildScript(utility: UtilityTool, name: String) -> TargetScript {
-      return .pre(script: utility.scriptCommand, name: name)
+        return .pre(script: utility.scriptCommand, name: name, basedOnDependencyAnalysis: false)
     }
-
+    
 }
+
 
