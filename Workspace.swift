@@ -1,14 +1,13 @@
 //
 //  Workspace.swift
-//  Config
+//  AppManifests
 //
-//  Created by 이재훈 on 9/19/24.
+//  Created by 이재훈 on 9/20/24.
 //
 
 import ProjectDescription
-import ProjectDescriptionHelpers
 
 let workspace = Workspace(
-    name: "TCAProject",
+    name: "Tuist_TCA",
     projects: ["Projects/**"]
 )

@@ -13,10 +13,8 @@ import PackageDescription
 #endif
 
 let package = Package(
-    name: "TCAPractice",
+    name: "Tuist_TCA",
     dependencies: [
-        // Add your own dependencies here:
-        // .package(url: "https://github.com/Alamofire/Alamofire", from: "5.0.0"),
-        // You can read more about dependencies here: https://docs.tuist.io/documentation/tuist/dependencies
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", branch: "1.10.1")
     ]
 )

@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct TCAPracticeApp: App {
+struct TuistTCAApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
