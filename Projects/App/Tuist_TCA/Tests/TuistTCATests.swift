@@ -1,8 +1,23 @@
-import Foundation
+import ComposableArchitecture
 import XCTest
 
+@testable import Tuist_TCA
+
 final class TuistTCATests: XCTestCase {
-    func test_twoPlusTwo_isFour() {
-        XCTAssertEqual(2+2, 4)
+
+    override func setUp() async throws {
+
+    }
+
+    func testCounter() async {
+        let sut = TestStore(initialState: CounterFeature.State()) {
+            CounterFeature()
+        }
+        await sut.send(.incrementButtonTapped) {
+            $0.count = 1
+        }
+        await sut.send(.decrementButtonTapped) {
+            $0.count = 0
+        }
     }
 }

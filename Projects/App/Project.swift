@@ -7,6 +7,8 @@ let project = Project.app(
     dependencies: [
         .TCA
     ],
-    testDependencies: []
+    testDependencies: [
+        .TCA
+    ]
 )
 

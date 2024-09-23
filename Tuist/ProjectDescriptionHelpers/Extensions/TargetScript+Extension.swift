@@ -17,7 +17,7 @@ public extension TargetScript {
             case .swiftLint:
                 return """
 if [ -f "${PROJECT_DIR}/Tuist_TCA/Resources/swiftlint.yml" ]; then
-  "${PROJECT_DIR}/../../Tools/swiftlint" --config "${PROJECT_DIR}/Tuist_TCA/Resources/swiftlint.yml" "${PROJECT_DIR}"
+  "${PROJECT_DIR}/../../Tools/swiftlint" --config "${PROJECT_DIR}/Tuist_TCA/Resources/swiftlint.yml"
 else
   echo "warning: SwiftLint configuration file not found"
 fi

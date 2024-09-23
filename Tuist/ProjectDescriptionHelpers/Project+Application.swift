@@ -62,7 +62,7 @@ extension Project {
                     "CFBundleIconName": "AppIcon",
                     "NSAppTransportSecurity": [
                         "NSAllowsArbitraryLoads": true
-                    ]
+                    ],
                 ]
             ),
             sources: ["Tuist_TCA/Sources/**"],

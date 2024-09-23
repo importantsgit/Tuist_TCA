@@ -18,3 +18,5 @@ let package = Package(
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", branch: "1.10.1")
     ]
 )
+
+

@@ -3,12 +3,12 @@
 # https://realm.github.io/SwiftLint/rule-directory.html
 # 지우거나 추가하고싶으신게 있으면 하셔도 됩니다
 
-included:
-- Tuist_TCA
-
 # 비활성화 파일 목록 경로를 지정합니다.
 excluded:
-  - **/Sources
+
+included:
+ - ${PROJECT_DIR}/Tuist_TCA
+ - ${WORKSPACE_DIR}/Tuist
 
 # 비활성화 룰
 disabled_rules:
