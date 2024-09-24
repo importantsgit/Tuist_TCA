@@ -15,7 +15,7 @@ import PackageDescription
 let package = Package(
     name: "Tuist_TCA",
     dependencies: [
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", branch: "1.10.1")
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", branch: "1.15.0")
     ]
 )
 

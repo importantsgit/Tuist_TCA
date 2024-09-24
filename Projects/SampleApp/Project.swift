@@ -9,6 +9,7 @@ let project = Project.app(
     ],
     testDependencies: [
         .TCA
-    ]
+    ],
+    sourceRootPath: Project.appName
 )
 

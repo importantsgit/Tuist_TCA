@@ -12,20 +12,25 @@ extension Project {
     public static func app(
         name: String,
         platform: Platform,
+        bundleId: String = bundleId,
         dependencies: [TargetDependency],
-        testDependencies: [TargetDependency]
+        testDependencies: [TargetDependency],
+        sourceRootPath: String
     ) -> Project {
         
         let targets = makeAppTargets(
             name: name,
+            bundleId: bundleId,
             scripts: [
                 .prebuildScript(
                     utility: .swiftLint,
-                    name: "Run Lint"
+                    name: "Run Lint",
+                    root: name
                 )
             ],
             dependencies: dependencies,
-            testDependencies: testDependencies
+            testDependencies: testDependencies,
+            sourceRootPath: sourceRootPath
         )
         
         return .init(
@@ -44,7 +49,8 @@ extension Project {
         scripts: [TargetScript],
         dependencies: [TargetDependency],
         testDependencies: [TargetDependency],
-        coreDataModels: [CoreDataModel] = []
+        coreDataModels: [CoreDataModel] = [],
+        sourceRootPath: String
     ) -> [Target] {
         let mainTarget: Target = .target(
             name: name,
@@ -65,8 +71,8 @@ extension Project {
                     ],
                 ]
             ),
-            sources: ["Tuist_TCA/Sources/**"],
-            resources: ["Tuist_TCA/Resources/**"],
+            sources: ["\(sourceRootPath)/Sources/**"],
+            resources: ["\(sourceRootPath)/Resources/**"],
             scripts: scripts,
             dependencies: dependencies,
             settings: .settings(
@@ -83,7 +89,7 @@ extension Project {
             destinations: destinations,
             product: .unitTests,
             bundleId: "\(bundleId).tests",
-            sources: ["Tuist_TCA/Tests/**"],
+            sources: ["\(sourceRootPath)/Tests/**"],
             scripts: scripts,
             dependencies: testDependencies
         )

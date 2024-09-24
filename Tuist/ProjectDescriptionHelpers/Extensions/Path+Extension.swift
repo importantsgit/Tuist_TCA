@@ -16,10 +16,5 @@ extension Path {
   public static func xcconfigPath(_ xcconfigName: String) -> Path {
     return .relativeToRoot("XCConfigs/\(xcconfigName).xcconfig")
   }
-  
-  public static func scriptPath(_ scriptName: String) -> Path {
-    return .relativeToRoot("SaveEarth/Tools/\(scriptName)")
-  }
-  
 }
 

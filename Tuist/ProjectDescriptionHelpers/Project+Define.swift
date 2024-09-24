@@ -13,4 +13,5 @@ public extension Project {
     static let productName: String = "Tuist_TCA"
     static let deployTarget: DeploymentTargets = .iOS("17.0")
     static let bundleId = "com.importants.tuisttca"
+    static let bundleId2 = "com.importants.tuisttca"
 }

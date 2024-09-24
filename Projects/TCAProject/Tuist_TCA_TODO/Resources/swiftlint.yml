@@ -7,15 +7,12 @@
 excluded:
 
 included:
- - ${PROJECT_DIR}/Tuist_TCA
+ - ${PROJECT_DIR}/Tuist_TCA_Todo
  - ${WORKSPACE_DIR}/Tuist
-
-# 비활성화 룰
-disabled_rules:
   
 # 활성화 룰
 opt_in_rules:
-  - identifier_name # 변수나 클래스등 이름은 소문자, 대문자로 시작하며 너무길거나 짧으면 안됩니다. https://realm.github.io/SwiftLint/identifier_name.html
+#  - identifier_name # 변수나 클래스등 이름은 소문자, 대문자로 시작하며 너무길거나 짧으면 안됩니다. https://realm.github.io/SwiftLint/identifier_name.html
   - trailing_whitespace # line의 마지막에는 빈 여백이 있으면 안됩니다. https://realm.github.io/SwiftLint/trailing_whitespace.html
   - empty_count # count > 0 대신 isEmpty사용 https://realm.github.io/SwiftLint/empty_count.html
   - empty_string # string 빈문자열 체크시 "" 대신 isempty를 사용한다 https://realm.github.io/SwiftLint/empty_string.html
@@ -75,3 +72,4 @@ disabled_rules:
 - class_delegate_protocol # 클래스 델리게이트 프로토콜이 적절하게 사용되는지 확인
 - cyclomatic_complexity # 함수의 복잡도가 적절한지 확인
 - empty_enum_arguments # 열거형 케이스에 인자가 없는지 확인
+- identifier_name

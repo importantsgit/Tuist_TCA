@@ -1,0 +1,74 @@
+# lint 체크 비활성화 파일
+# swiftLint
+# https://realm.github.io/SwiftLint/rule-directory.html
+# 지우거나 추가하고싶으신게 있으면 하셔도 됩니다
+
+# 비활성화 파일 목록 경로를 지정합니다.
+excluded:
+
+included:
+ - ${PROJECT_DIR}/Tuist_TCA
+ - ${WORKSPACE_DIR}/Tuist
+
+# 활성화 룰
+opt_in_rules:
+  - identifier_name # 변수나 클래스등 이름은 소문자, 대문자로 시작하며 너무길거나 짧으면 안됩니다. https://realm.github.io/SwiftLint/identifier_name.html
+  - trailing_whitespace # line의 마지막에는 빈 여백이 있으면 안됩니다. https://realm.github.io/SwiftLint/trailing_whitespace.html
+  - empty_count # count > 0 대신 isEmpty사용 https://realm.github.io/SwiftLint/empty_count.html
+  - empty_string # string 빈문자열 체크시 "" 대신 isempty를 사용한다 https://realm.github.io/SwiftLint/empty_string.html
+  - force_unwrapping # force unwrapping을 하지 않습니다. https://realm.github.io/SwiftLint/force_unwrapping.html
+  - colon #colon 사용시 앞에는 여백이 없고 뒤에는 공백이 있어야합니다. https://realm.github.io/SwiftLint/colon.html
+  - sorted_imports # import 들의 라인 인덴트들이 일치해야 합니다. https://realm.github.io/SwiftLint/sorted_imports.html
+  - comma #comma 앞에는 여백이 없고 뒤에는 공백이 있어야합니다. https://realm.github.io/SwiftLint/comma.html
+  - force_try # try! 대신 do catch를 사용해 앱 안정성에 신경써야합니다. default: error
+  - closure_spacing # 클로저의 내용과 괄호사이엔 공백이 있어야합니다 https://realm.github.io/SwiftLint/closure_spacing.html
+  - duplicate_imports # 중복 import 방지 https://realm.github.io/SwiftLint/duplicate_imports.html
+  - unused_import # 사용하지 않는 import는 제거 합니다. https://realm.github.io/SwiftLint/unused_import.html
+  - multiline_parameters # 파라미터들도 한줄에 있거나 따로 있어야 합니다. https://realm.github.io/SwiftLint/multiline_parameters.html
+  - return_arrow_whitespace # return 화살표에는 양옆으로 공백이 있어야 합니다. https://realm.github.io/SwiftLint/return_arrow_whitespace.html
+  - vertical_whitespace # 수직으로는 여백이 2줄이상 생기면 안됩니다. https://realm.github.io/SwiftLint/vertical_whitespace.html
+  - void_return #  -> () 보단 -> Void 를 선호합니다.
+  - large_tuple # 튜플의 개수를 제한합니다. https://realm.github.io/SwiftLint/large_tuple.html
+  - trailing_newline # 파일의 마지막에 빈 줄이 있는지 확인 https://realm.github.io/SwiftLint/trailing_newline.html
+  
+# 라인의 최대 글자수를 지정합니다.
+# 100자 이상의 경우 경고, 120자 이상일 경우 에러를 나타냅니다.
+line_length:
+  - 100
+  - 120
+
+# 강제 언랩핑 에러 출력
+force_unwrapping:
+  severity: error
+
+# colon 에러 출력
+colon:
+  severity: error
+
+# 잘못된 comma 위치 에러 출력
+comma:
+  severity: error
+
+# import 정렬과 관련해, 오름차순 정렬
+# 줄바꿈의 경우 무시되기 때문에, FirstParty, ThirdParty 구분은 가능
+sorted_imports:
+  severity: error
+
+large_tuple:
+  - 4 #경고
+  - 5 #에러
+
+disabled_rules:
+- type_name # 타입 이름이 적절한지 확인
+- function_body_length # 함수 본문의 길이가 적절한지 확인
+- file_length # 파일의 길이가 적절한지 확인
+- unused_capture_list # 사용되지 않는 변수가 있는지 확인
+- unused_closure_parameter # 사용되지 않는 클로저 파라미터가 있는지 확인
+- type_body_length # 타입 본문의 길이가 적절한지 확인
+- multiple_closures_with_trailing_closure # 여러 개의 클로저가 트레일링 클로저 구문으로 사용되는지 확인
+- unused_optional_binding # 사용되지 않는 옵셔널 바인딩이 있는지 확인
+- private_over_fileprivate # 접근 제어자로 private를 사용하는지 확인
+- function_parameter_count # 함수 파라미터의 개수가 적절한지 확인
+- class_delegate_protocol # 클래스 델리게이트 프로토콜이 적절하게 사용되는지 확인
+- cyclomatic_complexity # 함수의 복잡도가 적절한지 확인
+- empty_enum_arguments # 열거형 케이스에 인자가 없는지 확인
