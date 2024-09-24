@@ -50,9 +50,8 @@ struct CounterView: View {
             .background(Color.gray.opacity(0.3))
 
             if store.isLoading {
-                ProgressView()
-            }
-            else if let fact = store.fact {
+                 ProgressView()
+            } else if let fact = store.fact {
                 Text(fact)
                     .font(.largeTitle)
                     .multilineTextAlignment(.center)

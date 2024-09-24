@@ -57,8 +57,7 @@ struct CounterFeature {
                     }
                     // 취소 ID 등록
                     .cancellable(id: CancelID.timer)
-                }
-                else {
+                } else {
                     // 취소 ID가 있는 Task 취소
                     return .cancel(id: CancelID.timer)
                 }

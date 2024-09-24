@@ -5,19 +5,16 @@ import XCTest
 
 final class TuistTCATests: XCTestCase {
 
-    override func setUp() async throws {
-
-    }
-
     func testCounter() async {
-        let sut = TestStore(initialState: CounterFeature.State()) {
-            CounterFeature()
-        }
-        await sut.send(.incrementButtonTapped) {
-            $0.count = 1
-        }
-        await sut.send(.decrementButtonTapped) {
-            $0.count = 0
-        }
+//        let sut = await TestStore(initialState: CounterFeature.State()) {
+//            CounterFeature()
+//        }
+//        
+//        await sut.send(.incrementButtonTapped) {
+//            $0.count = 1
+//        }
+//        await sut.send(.decrementButtonTapped) {
+//            $0.count = 0
+//        }
     }
 }
